@@ -86,3 +86,99 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+console.log(`Financial Analysis \n----------------`)
+
+// 1. ****** total number of months included in the dataset 
+const monthsInPeriod = finances.length;
+console.log(`Total number of months in the period: ${monthsInPeriod}`);
+
+
+
+// 2. ****** net profit/loss over entire period
+let netProfitLoss = 0;
+
+// for loop because in JS there's no built in function for sum of
+for (let i = 0; i < finances.length; i ++) {
+  netProfitLoss = netProfitLoss + finances[i][1];
+}    
+
+console.log(`Net Profit/Loss: $${netProfitLoss}`)
+
+
+
+// 3. ****** the average of the changes in Profit/Losses over the entire period.
+
+// for loop to iterate over each amount 
+// assign tracker variables 
+var totalChange = 0;
+var greatestIncrease = 0;
+var greatestIncreaseMonth = 0;
+var greatestDecrease = 0;
+var greatestDecreaseMonth = 0;
+
+for (let i = 1; i < finances.length; i++) {
+  // current value:
+  var currentValue = finances[i][1];
+  // TEST to see current values are fetched as expected:
+  // console.log(`current: ${currentValue}`);
+
+  // previous value
+  var previousValue = finances[i - 1][1];
+  // TEST to see previous values are fetched as expected:
+  // console.log(`previous: ${previousValue}`);
+
+  // change in value over the month
+  var changeInPeriod = (currentValue - previousValue);
+  // note to self: Math.abs = converts negative numbers into positive numbers
+  // TEST to see change values are calculated as expected:
+  // console.log(`change: ${changeInPeriod}`);
+
+  // total change
+  totalChange = totalChange + changeInPeriod;
+  // console.log(`Total change: ${totalChange}`);
+  // TEST to see total change values are calculated as expected:
+
+  // average of change = total change / (number of months it's dividing by)
+  var averageChange = (totalChange / i).toFixed(2);
+  // note to self: .toFixed(2) = rounds to two decimal places
+  // TEST to see average change values are calculated as expected:
+  // console.log(`Average change over entire period: ${averageChange}`);
+
+  // greatest increase in profits/losses
+  if (changeInPeriod > greatestIncrease) {
+    greatestIncrease = changeInPeriod;
+    // TEST to see greatest increase values are stored as expected:
+    // console.log(`Greatest increase in profits/losses: ${greatestIncrease}`)
+    
+    // corresponding month for the greatest increase
+    greatestIncreaseMonth = finances[i][0];
+    // TEST to see the corresponding month:
+    // console.log(`(${greatestIncreaseMonth})`)
+    }
+
+  // greatest decrease in profits/losses (reverse of greatest increase - flipped greator than operator)
+  if (changeInPeriod < greatestDecrease) {
+    greatestDecrease = changeInPeriod;
+    // console.log(greatestDecrease);
+
+    // corresponding month for the greatest decrease
+    greatestDecreaseMonth = finances[i][0]
+    // console.log(greatestDecreaseMonth)
+  }
+}
+
+// average of change:
+console.log(`Average change over entire period: ${averageChange}`);
+
+
+
+// 4. ****** the greatest increase in Profit/Losses (date and amount) over the entire period.
+console.log(`Greatest increase in profits/losses: $${greatestIncrease} (${greatestIncreaseMonth})`)
+
+
+
+// 5. ****** the greatest decrease in Profit/Losses (date and amount) over the entire period
+console.log(`Greatest decrease in profits/losses: $${greatestDecrease} (${greatestDecreaseMonth})`)
+
+
