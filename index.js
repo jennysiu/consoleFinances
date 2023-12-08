@@ -107,8 +107,6 @@ console.log(`Net Profit/Loss: $${netProfitLoss}`)
 
 
 
-// 3. ****** the average of the changes in Profit/Losses over the entire period.
-
 // for loop to iterate over each amount 
 // assign tracker variables 
 var totalChange = 0;
@@ -168,7 +166,9 @@ for (let i = 1; i < finances.length; i++) {
   }
 }
 
-// average of change:
+
+
+// 3. ****** the average of the changes in Profit/Losses over the entire period.
 console.log(`Average change over entire period: ${averageChange}`);
 
 
