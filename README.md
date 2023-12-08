@@ -42,7 +42,7 @@ To view the code files, you can Git Clone by following the instructions below:
 
 ## Usage
 
-To view the financial analysis, open console on the deployed website here: `https://jennysiu.github.io/consoleFinances/`
+To view the financial analysis, open console on the deployed website here: https://jennysiu.github.io/consoleFinances/
 
 Once the console is opened through the deploayed page, it should look something like this:
 ![Demo image of how the webpage should look like upon opening.](assets/images/demoOfFinishedProduct.png)
