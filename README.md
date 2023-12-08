@@ -35,14 +35,14 @@ Financial analysis provides:
 No installation is required.
 
 To view the code files, you can Git Clone by following the instructions below:
-1. Clone the repository: `https://github.com/jennysiu/consoleFinances`
-2. Navigate to the project directory: `cd consoleFinances`
+1. Clone the repository: ` https://github.com/jennysiu/consoleFinancialAnalysis`
+2. Navigate to the project directory: `cd consoleFinancialAnalysis`
 3. Open the `index.html` file in your preferred web browser.
 
 
 ## Usage
 
-To view the financial analysis, open the console on the deployed website here: [[https://jennysiu.github.io/consoleFinances/]
+To view the financial analysis, open the console on the deployed website here: [ https://jennysiu.github.io/consoleFinancialAnalysis/]
 
 Once the console is opened through the deployed page, it should look something like this:
 ![Demo image of how the webpage should look like upon opening.](assets/images/demoOfFinishedProduct.png)
